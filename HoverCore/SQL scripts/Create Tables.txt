@@ -1,0 +1,31 @@
+﻿CREATE TABLE `useraction` (
+  `id` int(11) NOT NULL,
+  `actiontype` int(11) NOT NULL,
+  `what` varchar(200) DEFAULT NULL,
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `theStuff` varchar(400) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+CREATE TABLE `userinfo` (
+  `id` int(11) unsigned NOT NULL,
+  `fieldtype` int(11) NOT NULL,
+  `userInfo` varchar(400) DEFAULT NULL,
+  PRIMARY KEY (`id`,`fieldtype`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+CREATE TABLE `users` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `userHash` char(44) NOT NULL,
+  `username` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `optout` timestamp NULL DEFAULT NULL,
+  `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `userHash_UNIQUE` (`userHash`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8mb4;
+
+
+
+

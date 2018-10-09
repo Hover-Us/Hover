@@ -1,0 +1,12 @@
+
+###############
+# Directories 
+*/.vs
+bin/
+obj/
+PublishProfiles/
+
+###############
+# specific environment variables
+appsettings.development.json
+appsettings.production.json

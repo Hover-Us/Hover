@@ -1,0 +1,101 @@
+﻿-- The definer (`root`@`localhost` in this script) needs access to the tables, the website account ONLY needs access to run procedures
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `UserGet`(IN userHashIn CHAR(44))
+BEGIN    
+	SELECT users.username, users.optout
+    FROM users
+    WHERE users.userHash = userHashIn; 
+END
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `UserNew`(IN userHashIn CHAR(44), IN emailEncrypted varchar(400), IN usernameIn varchar(50))
+BEGIN
+-- Save a new user to users and userinfo. If user exists, update name and set optout null
+
+    DECLARE duplicate_key INT DEFAULT 0;
+	DECLARE	oldEmailEncrypted varchar(400); 
+    DECLARE message varchar(200) DEFAULT '';
+        
+    BEGIN
+        DECLARE EXIT HANDLER FOR 1062 SET duplicate_key = 1;
+
+        INSERT INTO users (username, userHash)
+               VALUES (usernameIn, userHashIn);
+    END;    
+
+ -- update username & optout, return oldEmailEncrypted to compare, check for hash collision
+    IF (duplicate_key = 1) THEN BEGIN
+		DECLARE dbusername varchar(50);
+		DECLARE dboptout timestamp;
+		DECLARE matchId INT; 
+        
+        SELECT id INTO matchId FROM users WHERE userHash = userHashIn;
+			
+		SELECT userInfo INTO oldEmailEncrypted FROM userinfo WHERE fieldtype = 1 and id = matchId;
+				
+		SELECT username, optout INTO dbusername, dboptout FROM users WHERE id = matchId;
+		
+		IF (oldEmailEncrypted IS NULL) THEN -- If optout then need to insert email again.                    
+			INSERT INTO userinfo (id, fieldtype, userInfo)
+				VALUES (matchId, 1, emailEncrypted); -- Same insert as below
+		END IF;
+		
+		IF (dboptout IS NOT NULL) THEN
+			IF (BINARY dbusername != usernameIn) THEN -- BINARY makes it case sensitive
+			-- message: if there was something to report
+				SET message = CONCAT('Name changed ("',dbusername,'" to "',usernameIn,'") and opted In');
+			ELSE
+				SET message = CONCAT(usernameIn,' opted back In');
+			END IF;
+		ELSE IF (BINARY dbusername != usernameIn) THEN
+				SET message = CONCAT('Name changed ("',dbusername,'" to "',usernameIn,'")');
+			ELSE
+				SET message = CONCAT(usernameIn,' is still signed up');
+			END IF;
+		END IF;
+							
+		UPDATE users SET username = usernameIn, optout = null WHERE id = matchId;
+		INSERT INTO useraction (id, actiontype, what)
+			VALUES (matchId, 10, message);
+            
+		SELECT message, oldEmailEncrypted;
+	END;
+
+	ELSE -- No duplicate_key, insert email 
+		INSERT INTO userinfo (id, fieldtype, userInfo)
+			VALUES (LAST_INSERT_ID(), 1, emailEncrypted);
+    END IF;
+    
+END
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `UserOptOut`(IN userHashIn CHAR(44))
+BEGIN
+
+	DECLARE matchId INT;
+    DECLARE dboptout timestamp;
+    
+	SELECT id, optout
+    INTO matchId, dboptout
+    FROM users WHERE userHash = userHashIn;
+    
+    IF (matchId > 0) THEN
+        IF (dboptout IS NULL) THEN -- only set optout if it is null
+			UPDATE users SET optout = NOW() WHERE id = matchId;
+		END IF;
+        
+		DELETE FROM userinfo WHERE id = matchId; -- Removes everything
+        IF (ROW_COUNT()>0) THEN
+		SELECT 'We deleted your email address. Farewell.';
+        ELSE
+			IF (dboptout IS NOT NULL) THEN
+				SELECT 'No email address found, it was already removed.';
+			ELSE
+				INSERT INTO useraction (id, actiontype, what)
+					VALUES (matchId, -2, 'No email address found');
+				SELECT 'No email address found.';
+			END IF;
+        END IF;
+    ELSE
+		SELECT 'No match found.';
+    END IF;
+
+END

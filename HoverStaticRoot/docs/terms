@@ -1,0 +1,101 @@
+﻿﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Terms of Use</title>
+    <style>
+body {
+ color: #111;
+ background: #f8f8f8;
+ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, sans-serif;
+ line-height: 1.3;
+ font-size: calc(1em + 0.2vw);
+}
+
+section {
+ margin: 2vh 2vw;
+ border:1px solid #d00;
+ border-radius: 0.5rem;
+ padding:0 2vw;
+ background:#fff;
+}
+
+@media screen and (min-width: 40em) {
+    .policy {
+        padding:0 calc(20vw - 8em); /* 20% of 40em = 8em, smooth transition */
+    }
+}
+    </style>
+</head>
+<body>
+<img src="../img/HUlogo.svg" style="position:fixed;right:0;left:0;width:100%;z-index:-1;opacity:0.4" />
+<div class="policy">
+<h1 style="text-align:center">Hover Us Terms of Use</h1>
+
+<h4 style="text-align:center">Last Updated: July 30<sup>th</sup>, 2018</h4>
+<section>
+    <h3>Welcome to Hover.Us!</h3>
+    <p><b>These terms and conditions of use apply to hover.us, this site. BY USING THE SITE, YOU AGREE TO THESE TERMS OF USE; IF YOU DO NOT AGREE, DO NOT USE THE SITE.</b></p>
+    <p>We reserve the right to update or change these terms at any time without notice to you. It is your responsibility to check these Terms of Use periodically for changes.</p>
+</section>
+
+<section>
+    <h3>Content</h3>
+    <p>All text, photographs, trademarks, logos, and video contained on the site is owned, controlled or licensed by or to Hover Us, and is protected by copyright, patent and trademark laws, and other intellectual property rights and laws.</p>
+    <p>This site design, HTML, CSS and javascript is open source with the <a href="https://choosealicense.com/licenses/mit/">MIT License</a>. Take a look at the main project at https://github.com/Hover-Us/ and enjoy.</p>
+</section>
+
+<section>
+    <h3>Use of the Site</h3>
+    <p>You may not use any "page-scraper", "spider", "robot" or other automatic algorithm or methodology, or similar manual process, to access any portion of the Site or any Content. You may not "test" your HOVER implementation against this site, or in any way circumvent the functional structure of the Site, in any way, including using web developer tools to forge headers or otherwise modify service endpoint calls.</p>
+    <p>You may not take any action to interfere with, or disrupt, the Site or any other person’s use of the Site.</p>
+</section>
+
+<section>
+    <h3>Privacy</h3>
+    <p>Please see our <a href="privacy">Privacy Policy</a>. You acknowledge and agree that Internet transmissions are never completely private or secure, even when encrypted.</p>
+</section>
+
+<section>
+    <h3>Prohibited User Conduct</h3>
+    <p>You agree that you will not: (a) impersonate any person or entity or misrepresent your affiliation with any person or entity; (b) insert your own or a third party’s advertising, branding or other promotional content on the Site or our Social Media; or (c) attempt to gain unauthorized access to, or in any way disrupt, our systems.</p>
+    <p>You further agree that you may not alter, edit, delete, remove, otherwise change the meaning or appearance of, or repurpose, any of the content or materials on the site including the alteration or removal of any trademarks, trade names, logos, or other proprietary content or proprietary rights notices.</p>
+</section>
+    
+<section>
+    <h3>Indemnity</h3>
+    <p>You agree to indemnify and hold Hover Us, its owners, employees, agents, subsidiaries and affiliates, harmless from any claims, liability, loss, demands or expenses (including attorneys’ fees), made against Hover Us by any third party due to or arising out of your use of the Site.</p>
+</section>
+
+<section>
+    <h3>Disclaimers</h3>
+    <p><b>The Site and Services are provided “AS IS” and “AS AVAILABLE” and we expressly disclaim any warranties and conditions of any kind, whether express or implied, including the warranties or conditions of merchantability, fitness for a particular purpose, title, accuracy, or non-infringement. We make no warranty that the Site or Services: (a) will meet your requirements; (b) will be available on an uninterrupted, timely, secure, or error-free basis; or (c) will be accurate, reliable, free of viruses or other harmful code, complete, legal, or safe.</b> Some states do not allow the exclusion of implied warranties, so the above exclusion may not apply to you.</p>
+</section>
+
+<section>
+    <h3>Limitation of Liability</h3>
+    <p>In no event shall we be liable to you or any third party for any lost profit or any indirect, consequential, exemplary, incidental, or punitive damages arising from or relating to this Agreement or your use of, or inability to use, the Site or Services, even if we have been advised of the possibility of such damages. Use of the Site and Services are at your own discretion and risk, and you are solely responsible for any damage to your computer system or loss of data resulting therefrom. If, notwithstanding the other provisions of these Terms of Use, Hover Us is found to be liable to you for any damage or loss which arises out of or is in any way connected with your use of the Site or any Content, our liability shall in no event exceed the greater of (a) fifty us dollars ($50) or (b) amounts you have paid Hover Us in the prior 12 months (if any). The existence of more than one claim will not enlarge this limit.</p>
+</section>
+
+<section>
+    <h3>Governing Law</h3>
+    <p>You agree that the relationship between you and us shall be governed by the laws of the State of California, United States of America, without regard to its conflicts of laws provisions. You agree that any controversy or claim that you have arising out of or relating to these Terms, or the breach thereof, shall be settled by arbitration administered by the American Arbitration Association in accordance with its applicable Arbitration Rules. The place of arbitration shall be Orange County, CA, USA. All parties to these terms and conditions waive their respective rights to a trial by jury.</p>
+    <p>This Agreement constitutes the entire agreement between you and us regarding the use of the Site and Services. Our failure to exercise or enforce any right or provision of this Agreement shall not operate as a waiver of such right or provision. If any provision of this Agreement is, for any reason, held to be invalid or unenforceable, the other provisions of this Agreement will be unimpaired and the invalid or unenforceable provision shall be limited or eliminated to the minimum extent necessary and replaced with a valid provision that best embodies the intent of these Terms of Use, so that it is valid and enforceable to the maximum extent permitted by law.</p>
+</section>
+
+<section>
+    <h3>Comments, Complaints and Questions</h3>
+    <p>We welcome your feedback. Email privacy@hover.us</p>
+</section>
+
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+ <script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag() { dataLayer.push(arguments); }
+ gtag('js', new Date());
+
+ gtag('config', 'GA_TRACKING_ID');
+ </script>
+</body>
+</html>
