@@ -53,7 +53,7 @@
 <tr><td style=background-color:#fff>
 <table role=presentation cellspacing=0 cellpadding=0 border=0 width=100%>
 <tr><td style=padding:20px;font-family:sans-serif;font-size:15px;line-height:20px;color:#555>
-<h1 style="margin:0 0 10px 0;font-family:sans-serif;font-size:25px;line-height:30px;color:#333;font-weight:normal">Welcome <script>document.write(params["n"])</script>, to Hover Us: The Hoverboard that floats on Air!</h1>
+<h1 style="margin:0 0 10px 0;font-family:sans-serif;font-size:25px;line-height:30px;color:#333;font-weight:normal">Welcome <script>document.write(encodeURIComponent(params["n"]))</script>, to Hover Us: The Hoverboard that floats on Air!</h1>
 <p style=margin:0>We are small but we are ready to do big things, Fun Things! The KickStarter will have boards ready to ride, material kits for Do-It-Yourself types, and all backers (from $5) will get a small STEM focused PDF that grade schoolers and older can find interesting: How to design your own floating hoverboard. Learn about pressure, force, materials... We are not responsible if your leaf blower gets destroyed. Learning <i><b>can</b></i> be fun :)</p>
 </td></tr>
 <tr><td style="padding:0 20px">
