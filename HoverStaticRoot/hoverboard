@@ -58,17 +58,17 @@ footer div {
     </style>
 </head>
 <body>
-    <img src="img/HUlogo.svg" style="position:fixed;right:0;left:0;width:100%;z-index:-1;opacity:0.4" />
-    <div class="main">
+    <img src=img/HUlogo.svg style="position:fixed;right:0;left:0;width:100%;z-index:-1;opacity:0.4" />
+    <div class=main>
 
         <h1 style=text-align:center>Real Hoverboards</h1>
 
         <div style=margin-top:5em>
             <div class="b"><h3>What is a "real" hoverboard?</h3></div>
 
-           <div class="b">Unfortunately, everything from self-balancing scooters to helicopter like boards have been described as hoverboards. If it does not Hover like a hovercraft, then please don't call it a hoverboard. A real hoverboard uses an air cushion to float over the ground and water.</div> 
+           <div class=b>Unfortunately, everything from self-balancing scooters to maglev to multicopter flyboards have been described as hoverboards. If it does not Hover like a hovercraft, then please don't call it a hoverboard. A real hoverboard uses an air cushion to float over the ground and water.</div> 
 
-<div class="b">Cars <img src="/img/subaru.jpg" alt="rally car"> do not fly and neither do <a href="https://www.wonderopolis.org/wonder/how-does-a-hovercraft-work"><img src="/img/smallhovercraft.jpg" alt="Wonderopolis hovercraft">hovercraft</a> or hoverboards. The Hover Us board is not the first real hoverboard, but it is the best!</div>       
+<div class=b>Cars <img src=/img/subaru.jpg alt="rally car"> do not fly and neither do <a target=_blank href=https://www.wonderopolis.org/wonder/how-does-a-hovercraft-work><img src=/img/smallhovercraft.jpg alt="Wonderopolis hovercraft">hovercraft</a> or hoverboards. The Hover Us board is not the first real hoverboard, but it is the best!</div>       
 
 
         </div>
